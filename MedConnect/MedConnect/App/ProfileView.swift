@@ -8,66 +8,62 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
-        List {
-            Section {
-                
-                HStack {
-                    Text(User.MOCK_USER.initials)
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .frame(width: 72, height: 72)
-                        .background(Color(.systemGray3))
-                        .clipShape(Circle())
+        if let user = viewModel.currentUser {
+            List {
+                Section {
                     
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(User.MOCK_USER.fullname)
-                            .font(.subheadline)
+                    HStack {
+                        Text(user.initials)
+                            .font(.title)
                             .fontWeight(.semibold)
-                            .padding(.top, 4)
+                            .foregroundColor(.white)
+                            .frame(width: 72, height: 72)
+                            .background(Color(.systemGray3))
+                            .clipShape(Circle())
                         
-                        Text(User.MOCK_USER.email)
-                            .font(.footnote)
-                            .tint(.gray)
-                    }//: VSTACK
-                }//: HSTACK
-                
-            }//: SECTION
-            
-            Section("Geral") {
-                HStack {
-                    SettingsRowView(imageName: "gear",
-                                    title: "Versão",
-                                    tintColor: Color(.systemGray))
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(user.fullname)
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                                .padding(.top, 4)
+                            
+                            Text(user.email)
+                                .font(.footnote)
+                                .tint(.gray)
+                        }//: VSTACK
+                    }//: HSTACK
                     
-                    Spacer()
-                    
-                    Text("1.0.0")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                }//: HSTACK
-            }//: SECTION
-            
-            Section("Conta") {
-                Button {
-                    print("Deslogar")
-                } label: {
-                    SettingsRowView(imageName: "arrow.left.circle.fill",
-                                    title: "Sair",
-                                    tintColor: .red)
-                }
-
-                Button {
-                    print("Deletar")
-                } label: {
-                    SettingsRowView(imageName: "xmark.circle.fill",
-                                    title: "Deletar conta",
-                                    tintColor: .red)
-                }
+                }//: SECTION
                 
-            }//: SECTION
-            
+                Section("Geral") {
+                    HStack {
+                        SettingsRowView(imageName: "gear",
+                                        title: "Versão",
+                                        tintColor: Color(.systemGray))
+                        
+                        Spacer()
+                        
+                        Text("1.0.0")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                    }//: HSTACK
+                }//: SECTION
+                
+                Section("Conta") {
+                    Button {
+                        viewModel.signOut()
+                    } label: {
+                        SettingsRowView(imageName: "arrow.left.circle.fill",
+                                        title: "Sair",
+                                        tintColor: .red)
+                    }
+                    
+                }//: SECTION
+                
+            }
         }//: LIST
     }
 }

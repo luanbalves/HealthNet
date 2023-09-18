@@ -39,10 +39,26 @@ struct RegistrationView: View {
                           placerHolder: "Digite sua senha",
                           isSecureField: true)
                 
-                InputView(text: $confirmPassword,
-                          title: "Confirme sua senha",
-                          placerHolder: "Repita sua senha",
-                          isSecureField: true)
+                ZStack (alignment: .trailing) {
+                    InputView(text: $confirmPassword,
+                              title: "Confirme sua senha",
+                              placerHolder: "Repita sua senha",
+                              isSecureField: true)
+                    
+                    if !password.isEmpty && !confirmPassword.isEmpty {
+                        if password == confirmPassword {
+                            Image(systemName: "checkmark.circle.fill")
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(.systemGreen))
+                        } else {
+                            Image(systemName: "xmark.circle.fill")
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(.systemRed))
+                        }
+                    }
+                }
             }//: Vstack
             .padding(.horizontal)
             .padding(.top, 12)
@@ -63,6 +79,8 @@ struct RegistrationView: View {
                 .frame(width: UIScreen.main.bounds.width - 32, height: 48)
             }//: BUTTON
             .background(Color(.systemBlue))
+            .disabled(!formIsValid)
+            .opacity(formIsValid ? 1.0 : 0.5)
             .cornerRadius(10)
             .padding(.top, 24)
             
@@ -80,6 +98,17 @@ struct RegistrationView: View {
             }
 
         }
+    }
+}
+
+extension RegistrationView: AuthenticationFormProtocol {
+    var formIsValid: Bool {
+        return !email.isEmpty
+        && email.contains("@")
+        && !password.isEmpty
+        && password.count > 5
+        && confirmPassword == password
+        && !fullname.isEmpty
     }
 }
 

@@ -17,6 +17,7 @@
 		3F0E8C792AAD538A00D14BCD /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3F0E8C782AAD538A00D14BCD /* FirebaseFirestoreSwift */; };
 		3F0E8C7B2AAD538A00D14BCD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3F0E8C7A2AAD538A00D14BCD /* FirebaseStorage */; };
 		3F0E8C7D2AAD540100D14BCD /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E8C7C2AAD540100D14BCD /* AuthViewModel.swift */; };
+		3FC6076F2AB7C9F500228A1C /* ForgetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC6076E2AB7C9F400228A1C /* ForgetPasswordView.swift */; };
 		3FF269E72AACEC0800F84489 /* MedConnectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF269E62AACEC0800F84489 /* MedConnectApp.swift */; };
 		3FF269EB2AACEC0B00F84489 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF269EA2AACEC0B00F84489 /* Assets.xcassets */; };
 		3FF269EE2AACEC0B00F84489 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF269ED2AACEC0B00F84489 /* Preview Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		3F0E8C6F2AAD1EB000D14BCD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3F0E8C712AAD265C00D14BCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "MedConnect/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		3F0E8C7C2AAD540100D14BCD /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		3FC6076E2AB7C9F400228A1C /* ForgetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordView.swift; sourceTree = "<group>"; };
 		3FF269E32AACEC0800F84489 /* MedConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF269E62AACEC0800F84489 /* MedConnectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedConnectApp.swift; sourceTree = "<group>"; };
 		3FF269EA2AACEC0B00F84489 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				3FF269FE2AACEF4300F84489 /* LoginView.swift */,
 				3F0E8C692AACFA6B00D14BCD /* RegistrationView.swift */,
 				3F0E8C6B2AACFDC200D14BCD /* ProfileView.swift */,
+				3FC6076E2AB7C9F400228A1C /* ForgetPasswordView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FC6076F2AB7C9F500228A1C /* ForgetPasswordView.swift in Sources */,
 				3FF269FF2AACEF4300F84489 /* LoginView.swift in Sources */,
 				3FF26A022AACF26B00F84489 /* InputView.swift in Sources */,
 				3FF269FA2AACEEA300F84489 /* ContentView.swift in Sources */,
