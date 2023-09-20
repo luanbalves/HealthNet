@@ -15,12 +15,12 @@ struct LoginView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                //MARK: - LOGO
+                //MARK: - LOGO (Ainda vai mudar)
                 
                 Text("MedConnect")
                     .fontWeight(.bold)
                     .font(.system(size: 38))
-                    .foregroundColor(.green)
+                    .foregroundColor(.accentColor)
                     .padding(.vertical, 38)
                 
                 //MARK: - FORM
@@ -69,7 +69,7 @@ struct LoginView: View {
                     .foregroundColor(.white)
                     .frame(width: UIScreen.main.bounds.width - 32, height: 48)
                 }//: BUTTON
-                .background(Color(.systemBlue))
+                .background(Color(red: 0.0, green: 0.502, blue: 0.251))
                 .disabled(!formIsValid)
                 .opacity(formIsValid ? 1.0 : 0.5)
                 .cornerRadius(10)

@@ -18,11 +18,16 @@ struct RegistrationView: View {
     
     var body: some View {
         VStack {
+            
+            //MARK: - LOGO
+            
             Text("MedConnect")
                 .fontWeight(.bold)
                 .font(.system(size: 38))
-                .foregroundColor(.green)
+                .foregroundColor(.accentColor)
                 .padding(.vertical, 38)
+            
+            //MARK: - FORM
             
             VStack(spacing: 24) {
                 InputView(text: $email,
@@ -78,8 +83,7 @@ struct RegistrationView: View {
                 .foregroundColor(.white)
                 .frame(width: UIScreen.main.bounds.width - 32, height: 48)
             }//: BUTTON
-            .background(Color(.systemBlue))
-            .disabled(!formIsValid)
+            .background(Color(red: 0.0, green: 0.502, blue: 0.251))            .disabled(!formIsValid)
             .opacity(formIsValid ? 1.0 : 0.5)
             .cornerRadius(10)
             .padding(.top, 24)

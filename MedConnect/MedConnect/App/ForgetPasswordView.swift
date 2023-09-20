@@ -18,7 +18,7 @@ struct ForgetPasswordView: View {
             Text("MedConnect")
                 .fontWeight(.bold)
                 .font(.system(size: 38))
-                .foregroundColor(.green)
+                .foregroundColor(.accentColor)
                 .padding(.vertical, 38)
             
                 InputView(text: $email, title: "Email", placerHolder: "Digite seu email")
@@ -37,7 +37,7 @@ struct ForgetPasswordView: View {
                 .foregroundColor(.white)
                 .frame(width: UIScreen.main.bounds.width - 32, height: 48)
             }//: BUTTON
-            .background(Color(.systemBlue))
+            .background(Color(red: 0.0, green: 0.502, blue: 0.251))
             .cornerRadius(10)
             .padding(.top, 24)
             .disabled(!formIsValid)

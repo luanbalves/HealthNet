@@ -15,6 +15,8 @@ struct ProfileView: View {
             List {
                 Section {
                     
+                    //MARK: - PROFILE
+                    
                     HStack {
                         Text(user.initials)
                             .font(.title)
@@ -29,14 +31,17 @@ struct ProfileView: View {
                                 .font(.subheadline)
                                 .fontWeight(.semibold)
                                 .padding(.top, 4)
+                                .tint(.primary)
                             
                             Text(user.email)
                                 .font(.footnote)
-                                .tint(.gray)
+                                .tint(.primary)
                         }//: VSTACK
                     }//: HSTACK
                     
                 }//: SECTION
+                
+                //MARK: - OTHER INFORMATIONS AND FUNCTIONALITIES
                 
                 Section("Geral") {
                     HStack {
@@ -48,7 +53,7 @@ struct ProfileView: View {
                         
                         Text("1.0.0")
                             .font(.subheadline)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.primary)
                     }//: HSTACK
                 }//: SECTION
                 
@@ -71,5 +76,6 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
+            .environmentObject(AuthViewModel())
     }
 }
