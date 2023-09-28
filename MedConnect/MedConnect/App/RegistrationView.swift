@@ -13,8 +13,13 @@ struct RegistrationView: View {
     @State private var fullname = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    @State private var selectedStatus = "Estudante"
+    @State private var crm = ""
+    
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: AuthViewModel
+    
+    let statusOptions = ["Estudante", "Cursando", "Médico"]
     
     var body: some View {
         VStack {
@@ -63,7 +68,20 @@ struct RegistrationView: View {
                                 .foregroundColor(Color(.systemRed))
                         }
                     }
-                }
+                }//: ZSTACK
+                
+                Picker("Status", selection: $selectedStatus) {
+                                ForEach(statusOptions, id: \.self) { status in
+                                    Text(status)
+                                }
+                            }
+                            .pickerStyle(SegmentedPickerStyle())
+                            
+                            if selectedStatus == "Médico" {
+                                TextField("CRM", text: $crm)
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                            }
+                
             }//: Vstack
             .padding(.horizontal)
             .padding(.top, 12)

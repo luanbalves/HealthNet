@@ -36,6 +36,7 @@ struct ProfileView: View {
                             Text(user.email)
                                 .font(.footnote)
                                 .tint(.primary)
+
                         }//: VSTACK
                     }//: HSTACK
                     
@@ -65,6 +66,14 @@ struct ProfileView: View {
                                         title: "Sair",
                                         tintColor: .red)
                     }
+                    
+                    Button {
+//                                EditProfileView()
+                    } label: {
+                        SettingsRowView(imageName: "person.text.rectangle",
+                                        title: "Editar Perfil",
+                                        tintColor: .blue)
+                    }//: NAVLINK
                     
                 }//: SECTION
                 
