@@ -36,6 +36,15 @@ struct ProfileView: View {
                             Text(user.email)
                                 .font(.footnote)
                                 .tint(.primary)
+                            Text(user.status)
+                                .font(.footnote)
+                                .tint(.primary)
+                            
+                            if(user.status == "Médico") {
+                                Text("CRM: \(user.crm!)")
+                                    .font(.footnote)
+                                    .tint(.primary)
+                            }
 
                         }//: VSTACK
                     }//: HSTACK

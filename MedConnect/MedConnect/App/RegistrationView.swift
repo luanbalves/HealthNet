@@ -90,7 +90,10 @@ struct RegistrationView: View {
                 Task {
                     try await viewModel.createUser(withEmail: email,
                                                    password:password,
-                                                   fullname: fullname)
+                                                   fullname: fullname,
+                                                   status: selectedStatus,
+                                                   crm: crm
+                    )
                 }
             } label: {
                 HStack {
