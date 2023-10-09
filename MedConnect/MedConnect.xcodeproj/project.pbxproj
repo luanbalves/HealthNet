@@ -20,6 +20,9 @@
 		3F4D7F762ABB33D5000BA289 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4D7F752ABB33D5000BA289 /* MainView.swift */; };
 		3FA9E34F2ABB361C0011B401 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E34E2ABB361C0011B401 /* MainTabView.swift */; };
 		3FA9E3512ABB3BB10011B401 /* ConteudosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E3502ABB3BB10011B401 /* ConteudosView.swift */; };
+		3FA9E3572AD3425A0011B401 /* ConteudosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E3562AD3425A0011B401 /* ConteudosViewModel.swift */; };
+		3FA9E3592AD34A150011B401 /* VideoUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E3582AD34A150011B401 /* VideoUploader.swift */; };
+		3FA9E35B2AD34FD80011B401 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E35A2AD34FD80011B401 /* Video.swift */; };
 		3FC6076F2AB7C9F500228A1C /* ForgetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC6076E2AB7C9F400228A1C /* ForgetPasswordView.swift */; };
 		3FF269E72AACEC0800F84489 /* MedConnectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF269E62AACEC0800F84489 /* MedConnectApp.swift */; };
 		3FF269EB2AACEC0B00F84489 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF269EA2AACEC0B00F84489 /* Assets.xcassets */; };
@@ -39,6 +42,9 @@
 		3F4D7F752ABB33D5000BA289 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3FA9E34E2ABB361C0011B401 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		3FA9E3502ABB3BB10011B401 /* ConteudosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConteudosView.swift; sourceTree = "<group>"; };
+		3FA9E3562AD3425A0011B401 /* ConteudosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConteudosViewModel.swift; sourceTree = "<group>"; };
+		3FA9E3582AD34A150011B401 /* VideoUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoUploader.swift; sourceTree = "<group>"; };
+		3FA9E35A2AD34FD80011B401 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		3FC6076E2AB7C9F400228A1C /* ForgetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordView.swift; sourceTree = "<group>"; };
 		3FF269E32AACEC0800F84489 /* MedConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF269E62AACEC0800F84489 /* MedConnectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedConnectApp.swift; sourceTree = "<group>"; };
@@ -64,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FA9E3552AD342450011B401 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3FA9E3562AD3425A0011B401 /* ConteudosViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		3FF269DA2AACEC0800F84489 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +97,7 @@
 		3FF269E52AACEC0800F84489 /* MedConnect */ = {
 			isa = PBXGroup;
 			children = (
+				3FA9E3552AD342450011B401 /* ViewModel */,
 				3FF269FB2AACEEF200F84489 /* Utility */,
 				3FF269F62AACED3000F84489 /* Model */,
 				3FF269F52AACED2D00F84489 /* View */,
@@ -132,6 +147,7 @@
 			children = (
 				3F0E8C6F2AAD1EB000D14BCD /* User.swift */,
 				3F0E8C7C2AAD540100D14BCD /* AuthViewModel.swift */,
+				3FA9E35A2AD34FD80011B401 /* Video.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,6 +155,7 @@
 		3FF269FB2AACEEF200F84489 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				3FA9E3582AD34A150011B401 /* VideoUploader.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -224,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FC6076F2AB7C9F500228A1C /* ForgetPasswordView.swift in Sources */,
+				3FA9E3572AD3425A0011B401 /* ConteudosViewModel.swift in Sources */,
 				3FF269FF2AACEF4300F84489 /* LoginView.swift in Sources */,
 				3FF26A022AACF26B00F84489 /* InputView.swift in Sources */,
 				3FF269FA2AACEEA300F84489 /* ContentView.swift in Sources */,
@@ -231,9 +249,11 @@
 				3FA9E3512ABB3BB10011B401 /* ConteudosView.swift in Sources */,
 				3F0E8C702AAD1EB000D14BCD /* User.swift in Sources */,
 				3F0E8C6C2AACFDC200D14BCD /* ProfileView.swift in Sources */,
+				3FA9E3592AD34A150011B401 /* VideoUploader.swift in Sources */,
 				3F4D7F762ABB33D5000BA289 /* MainView.swift in Sources */,
 				3F0E8C6A2AACFA6B00D14BCD /* RegistrationView.swift in Sources */,
 				3F0E8C6E2AAD004300D14BCD /* SettingsRowView.swift in Sources */,
+				3FA9E35B2AD34FD80011B401 /* Video.swift in Sources */,
 				3F0E8C7D2AAD540100D14BCD /* AuthViewModel.swift in Sources */,
 				3FA9E34F2ABB361C0011B401 /* MainTabView.swift in Sources */,
 			);

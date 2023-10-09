@@ -128,12 +128,25 @@ struct RegistrationView: View {
 
 extension RegistrationView: AuthenticationFormProtocol {
     var formIsValid: Bool {
-        return !email.isEmpty
-        && email.contains("@")
-        && !password.isEmpty
-        && password.count > 5
-        && confirmPassword == password
-        && !fullname.isEmpty
+        
+        if selectedStatus == "Médico" {
+            return !email.isEmpty
+            && email.contains("@")
+            && !password.isEmpty
+            && password.count > 5
+            && confirmPassword == password
+            && !fullname.isEmpty
+            && (!crm.isEmpty || selectedStatus != "Médico")
+            
+        } else {
+            return !email.isEmpty
+            && email.contains("@")
+            && !password.isEmpty
+            && password.count > 5
+            && confirmPassword == password
+            && !fullname.isEmpty
+        }
+        
     }
 }
 
