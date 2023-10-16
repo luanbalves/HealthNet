@@ -13,13 +13,13 @@ struct RegistrationView: View {
     @State private var fullname = ""
     @State private var password = ""
     @State private var confirmPassword = ""
-    @State private var selectedStatus = "Estudante"
+    @State private var selectedStatus = "Vestibulando"
     @State private var crm = ""
     
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: AuthViewModel
     
-    let statusOptions = ["Estudante", "Cursando", "Médico"]
+    let statusOptions = ["Vestibulando", "Estudante", "Médico"]
     
     var body: some View {
         VStack {
