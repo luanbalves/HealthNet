@@ -10,27 +10,27 @@ import SwiftUI
 struct MainTabView: View {
     
     var body: some View {
-        TabView {
-            MainView()
-                .tabItem {
-                    Image(systemName: "square.grid.2x2")
-                    Text("Navegar")
-                }
-            
-            ConteudosView()
-                .tabItem {
-                    Image(systemName: "play.rectangle")
-                    Text("Conteúdos")
-                }
-            
-            ProfileView()
-                .tabItem {
-                    Image(systemName: "person.crop.circle")
-                    Text("Perfil")
-                }
-            
-            
-        }//: TABVIEW
+            TabView {
+                MainView()
+                    .tabItem {
+                        Image(systemName: "square.grid.2x2")
+                        Text("Navegar")
+                    }
+                
+                ConteudosView()
+                    .tabItem {
+                        Image(systemName: "play.rectangle")
+                        Text("Conteúdos")
+                    }
+                
+                ProfileView()
+                    .tabItem {
+                        Image(systemName: "person.crop.circle")
+                        Text("Perfil")
+                    }
+                
+                
+            }//: TABVIEW
     }
 }
 

@@ -11,31 +11,64 @@ import AVKit
 
 struct ConteudosView: View {
     @StateObject var viewModel = ConteudosViewModel()
+    @State private var searchText = ""
+    @State private var isSearching = false
     
     var body: some View {
         NavigationStack {
             ScrollView {
-                ForEach(viewModel.videos) { video in
-                    VideoThumbnailView(video: video)
-                        .padding(.horizontal, 16)
-                        .padding(.bottom, 16)
-                }
+                HStack {
+                    TextField("Pesquisar", text: $searchText)
+                        .padding(.leading, 24)
+                    
+                    if isSearching {
+                        Button {
+                            searchText = ""
+                            isSearching = false
+                        } label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundColor(.gray)
+                        }//: BUTTON
+                        .padding(.trailing, 8)
+                    } else {
+                        Button {
+                            isSearching = true
+                        } label: {
+                            Image(systemName: "magnifyingglass")
+                        }//: BUTTON
+                        .padding(.trailing, 8)
+                    }
+                    
+                }//: HSTACK
+                .padding()
+                .background(Color.primary.opacity(0.1))
+                .cornerRadius(112)
+                .frame(width: UIScreen.main.bounds.width - 28)
+                .padding(.bottom, 25)
                 
-            }//: SCROLLVIEW
-            .refreshable {
-                Task { try await viewModel.fetchVideos() }
-            }
-            .navigationTitle("Conteudos")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    PhotosPicker(selection: $viewModel.selectedItem,
-                                 matching: .any(of: [.videos, .not(.images)])) {
-                        Image(systemName: "plus")
-                            .foregroundColor(.accentColor)
+                ScrollView {
+                    ForEach(viewModel.videos) { video in
+                        VideoThumbnailView(video: video)
+                            .padding(.horizontal, 16)
+                            .padding(.bottom, 16)
+                    }
+                    
+                }//: SCROLLVIEW
+                .refreshable {
+                    Task { try await viewModel.fetchVideos() }
+                }
+                .navigationTitle("Conteudos")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        PhotosPicker(selection: $viewModel.selectedItem,
+                                     matching: .any(of: [.videos, .not(.images)])) {
+                            Image(systemName: "plus")
+                                .foregroundColor(.accentColor)
+                        }
                     }
                 }
-            }
+            }//: SCROLLVIEW
         }//: NAVSTACK
     }
 }
@@ -47,17 +80,29 @@ struct VideoThumbnailView: View {
     
     var body: some View {
         VStack {
+            HStack {
+                Circle()
+                    .frame(width: 30, height: 30)
+                    .foregroundColor(.primary)
+                
+                Text("Nome")
+                    .font(.headline)
+                
+                Spacer()
+            }//: HSTACK
+            
             VideoPlayer(player: AVPlayer(url: URL(string: video.videoUrl)!))
                 .frame(height: 200)
             
             HStack {
                 Text("Titulo")
-                    .font(.title3)
+                    .font(.title2)
                     .background(
                         Color.accentColor
                             .frame(height: 6)
                             .offset(y: 24)
                     )
+
                 Spacer()
                 
                 Button(action: {
@@ -73,8 +118,8 @@ struct VideoThumbnailView: View {
                     Image(systemName: "square.and.arrow.up")
                         .fontWeight(.heavy)
                 }
-            }
-        }
+            }//: HSTACK
+        }//: VSTACK
         .padding(16)
         .background(
             colorScheme == .dark ? Color.black : Color.white

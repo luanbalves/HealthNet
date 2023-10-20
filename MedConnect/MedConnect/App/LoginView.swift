@@ -17,9 +17,9 @@ struct LoginView: View {
             VStack {
                 //MARK: - LOGO (Ainda vai mudar)
                 
-                Text("MedConnect")
-                    .fontWeight(.bold)
-                    .font(.system(size: 38))
+                Text("HealthNet")
+                    .fontWeight(.heavy)
+                    .font(.custom("Avenir-Heavy", size: 38))
                     .foregroundColor(.accentColor)
                     .padding(.vertical, 38)
                 
