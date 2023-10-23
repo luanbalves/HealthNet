@@ -15,7 +15,7 @@ struct DetalheItemView: View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .center, spacing: 20) {
                 
-                // TITULo
+                // TITULO
                 
                 Text("Título".uppercased())
                     .font(.largeTitle)

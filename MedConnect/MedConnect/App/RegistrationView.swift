@@ -132,6 +132,8 @@ struct RegistrationView: View {
     }
 }
 
+//MARK: - FORM CONDITIONALS 
+
 extension RegistrationView: AuthenticationFormProtocol {
     var formIsValid: Bool {
         

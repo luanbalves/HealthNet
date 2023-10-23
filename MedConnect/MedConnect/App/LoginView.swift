@@ -95,6 +95,8 @@ struct LoginView: View {
     }
 }
 
+//MARK: - LOGIN CONDITIONALS
+
 extension LoginView: AuthenticationFormProtocol {
     var formIsValid: Bool {
         return !email.isEmpty

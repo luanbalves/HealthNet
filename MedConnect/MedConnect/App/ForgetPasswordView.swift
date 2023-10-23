@@ -68,6 +68,8 @@ struct ForgetPasswordView: View {
     }
 }
 
+//MARK: - FORM CONDITIONALS
+
 extension ForgetPasswordView: AuthenticationFormProtocol {
     var formIsValid: Bool {
         return !email.isEmpty
