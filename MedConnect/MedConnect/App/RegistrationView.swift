@@ -15,6 +15,7 @@ struct RegistrationView: View {
     @State private var confirmPassword = ""
     @State private var selectedStatus = "Vestibulando"
     @State private var crm = ""
+    @State private var user = ""
     
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: AuthViewModel
@@ -39,6 +40,10 @@ struct RegistrationView: View {
                           title: "Email",
                           placerHolder: "nome@exemplo.com")
                 .autocapitalization(.none)
+                
+                InputView(text: $user,
+                          title: "Usuário",
+                          placerHolder: "Digite seu usuário")
                 
                 InputView(text: $fullname,
                           title: "Nome completo",
@@ -89,10 +94,11 @@ struct RegistrationView: View {
             Button {
                 Task {
                     try await viewModel.createUser(withEmail: email,
-                                                   password:password,
+                                                   password: password,
                                                    fullname: fullname,
                                                    status: selectedStatus,
-                                                   crm: crm
+                                                   crm: crm,
+                                                   user: user
                     )
                 }
             } label: {
@@ -145,6 +151,8 @@ extension RegistrationView: AuthenticationFormProtocol {
             && password.count > 5
             && confirmPassword == password
             && !fullname.isEmpty
+            && !user.isEmpty
+            && !user.contains("@")
         }
         
     }

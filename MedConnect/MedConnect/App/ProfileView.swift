@@ -105,7 +105,7 @@ struct ProfileView: View {
                                     .tint(.primary)
                             }
                             
-                            Text("@Exemplo")
+                            Text("@\(user.user)")
                                 .font(.footnote)
                                 .tint(.primary)
                                 .fontWeight(.semibold)
@@ -152,7 +152,7 @@ struct ProfileView_Previews: PreviewProvider {
         //        ProfileView()
         //            .environmentObject(AuthViewModel())
         let viewModel = AuthViewModel()
-        viewModel.currentUser = User(id: "exemploID", fullname: "Nome de Exemplo", email: "exemplo@email.com", status: "Médico", crm: "123456")
+        viewModel.currentUser = User(id: "exemploID", fullname: "Nome de Exemplo", email: "exemplo@email.com", status: "Médico", crm: "123456", user: "user")
         return ProfileView()
             .environmentObject(viewModel)
     }
