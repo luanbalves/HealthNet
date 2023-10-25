@@ -11,7 +11,6 @@ import AVKit
 
 struct ConteudosView: View {
     @StateObject var viewModel = ConteudosViewModel()
-    @State private var searchText = ""
     @State private var isSearching = false
     @State private var isModalViewPresented = false
     
@@ -19,12 +18,12 @@ struct ConteudosView: View {
         NavigationStack {
             ScrollView {
                 HStack {
-                    TextField("Pesquisar", text: $searchText)
+                    TextField("Pesquisar", text: $viewModel.searchText)
                         .padding(.leading, 24)
                     
                     if isSearching {
                         Button {
-                            searchText = ""
+                            viewModel.searchText = ""
                             isSearching = false
                         } label: {
                             Image(systemName: "xmark.circle.fill")
@@ -48,7 +47,7 @@ struct ConteudosView: View {
                 .padding(.bottom, 25)
                 
                 ScrollView {
-                    ForEach(viewModel.videos) { video in
+                    ForEach(viewModel.filteredVideos) { video in
                         VideoThumbnailView(video: video)
                             .padding(.horizontal, 16)
                             .padding(.bottom, 16)

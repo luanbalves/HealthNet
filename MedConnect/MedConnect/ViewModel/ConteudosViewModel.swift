@@ -16,6 +16,15 @@ class ConteudosViewModel: ObservableObject {
     
     @Published var selectedItem: PhotosPickerItem?
     @Published var videoTitle = ""
+    @Published var searchText = ""
+    
+    var filteredVideos: [Video] {
+        if searchText.isEmpty {
+            return videos
+        } else {
+            return videos.filter{ $0.title.localizedCaseInsensitiveContains(searchText) }
+        }
+    }
     
     init () {
         Task { try await fetchVideos() }
@@ -25,7 +34,6 @@ class ConteudosViewModel: ObservableObject {
         guard let item = selectedItem else { return }
         guard let videoData = try await item.loadTransferable(type: Data.self) else { return }
         guard let videoUrl = try await VideoUploader.uploadVideo(withData: videoData) else { return }
-        let title = "titulo"
         
         try await Firestore.firestore().collection("videos").document().setData(["videoUrl": videoUrl, "title": videoTitle])
     }
