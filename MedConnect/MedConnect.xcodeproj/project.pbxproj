@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F05F8032AE88DB6003FD441 /* AddConteudoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05F8022AE88DB6003FD441 /* AddConteudoView.swift */; };
 		3F0E8C6A2AACFA6B00D14BCD /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E8C692AACFA6B00D14BCD /* RegistrationView.swift */; };
 		3F0E8C6C2AACFDC200D14BCD /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E8C6B2AACFDC200D14BCD /* ProfileView.swift */; };
 		3F0E8C6E2AAD004300D14BCD /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E8C6D2AAD004300D14BCD /* SettingsRowView.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F05F8022AE88DB6003FD441 /* AddConteudoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddConteudoView.swift; sourceTree = "<group>"; };
 		3F0E8C692AACFA6B00D14BCD /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		3F0E8C6B2AACFDC200D14BCD /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		3F0E8C6D2AAD004300D14BCD /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				3F6F731E2AE026DB0045538A /* NoticiasView.swift */,
 				3F6F73262AE09F8E0045538A /* AddNoticiaView.swift */,
 				3F6F732C2AE1ED8B0045538A /* EditProfileView.swift */,
+				3F05F8022AE88DB6003FD441 /* AddConteudoView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				3FC6076F2AB7C9F500228A1C /* ForgetPasswordView.swift in Sources */,
 				3FA9E3572AD3425A0011B401 /* ConteudosViewModel.swift in Sources */,
 				3FF269FF2AACEF4300F84489 /* LoginView.swift in Sources */,
+				3F05F8032AE88DB6003FD441 /* AddConteudoView.swift in Sources */,
 				3FF26A022AACF26B00F84489 /* InputView.swift in Sources */,
 				3F6F731F2AE026DB0045538A /* NoticiasView.swift in Sources */,
 				3FF269FA2AACEEA300F84489 /* ContentView.swift in Sources */,

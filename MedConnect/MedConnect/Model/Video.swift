@@ -9,6 +9,7 @@ import Foundation
 
 struct Video: Identifiable, Decodable {
     let videoUrl: String
+    var title: String
     var id: String {
         return NSUUID().uuidString
     }

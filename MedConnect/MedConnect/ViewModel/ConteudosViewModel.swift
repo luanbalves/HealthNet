@@ -14,9 +14,8 @@ import FirebaseFirestoreSwift
 class ConteudosViewModel: ObservableObject {
     @Published var videos = [Video]()
     
-    @Published var selectedItem: PhotosPickerItem? {
-        didSet { Task { try await uploadVideo() } }
-    }
+    @Published var selectedItem: PhotosPickerItem?
+    @Published var videoTitle = ""
     
     init () {
         Task { try await fetchVideos() }
@@ -26,8 +25,9 @@ class ConteudosViewModel: ObservableObject {
         guard let item = selectedItem else { return }
         guard let videoData = try await item.loadTransferable(type: Data.self) else { return }
         guard let videoUrl = try await VideoUploader.uploadVideo(withData: videoData) else { return }
+        let title = "titulo"
         
-        try await Firestore.firestore().collection("videos").document().setData(["videoUrl": videoUrl])
+        try await Firestore.firestore().collection("videos").document().setData(["videoUrl": videoUrl, "title": videoTitle])
     }
     
     @MainActor

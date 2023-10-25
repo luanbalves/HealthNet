@@ -58,7 +58,7 @@ struct MainView: View {
                     TextField("Pesquisar", text: $searchText)
                 }
                 
-            }
+            }//: HSTACK
             )
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

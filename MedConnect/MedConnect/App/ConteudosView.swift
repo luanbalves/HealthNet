@@ -13,6 +13,7 @@ struct ConteudosView: View {
     @StateObject var viewModel = ConteudosViewModel()
     @State private var searchText = ""
     @State private var isSearching = false
+    @State private var isModalViewPresented = false
     
     var body: some View {
         NavigationStack {
@@ -61,13 +62,17 @@ struct ConteudosView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        PhotosPicker(selection: $viewModel.selectedItem,
-                                     matching: .any(of: [.videos, .not(.images)])) {
+                        Button {
+                            isModalViewPresented.toggle()
+                        } label: {
                             Image(systemName: "plus")
-                                .foregroundColor(.accentColor)
                         }
                     }
                 }
+                .sheet(isPresented: $isModalViewPresented) {
+                    AddConteudoView(isModalViewPresented: $isModalViewPresented)
+                }
+                
             }//: SCROLLVIEW
         }//: NAVSTACK
     }
@@ -95,7 +100,7 @@ struct VideoThumbnailView: View {
                 .frame(height: 200)
             
             HStack {
-                Text("Titulo")
+                Text(video.title)
                     .font(.title2)
                     .background(
                         Color.accentColor
