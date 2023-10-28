@@ -31,6 +31,10 @@
 		3FA9E3592AD34A150011B401 /* VideoUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E3582AD34A150011B401 /* VideoUploader.swift */; };
 		3FA9E35B2AD34FD80011B401 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA9E35A2AD34FD80011B401 /* Video.swift */; };
 		3FC6076F2AB7C9F500228A1C /* ForgetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC6076E2AB7C9F400228A1C /* ForgetPasswordView.swift */; };
+		3FCDC2782AEB2BF900C713B8 /* Noticia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC2772AEB2BF900C713B8 /* Noticia.swift */; };
+		3FCDC27A2AEB2F5400C713B8 /* NoticiasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC2792AEB2F5400C713B8 /* NoticiasViewModel.swift */; };
+		3FCDC27C2AEB3B2C00C713B8 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC27B2AEB3B2C00C713B8 /* ImageUploader.swift */; };
+		3FE041632AEC215D00EFE4BA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3FE041622AEC215D00EFE4BA /* Kingfisher */; };
 		3FF269E72AACEC0800F84489 /* MedConnectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF269E62AACEC0800F84489 /* MedConnectApp.swift */; };
 		3FF269EB2AACEC0B00F84489 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF269EA2AACEC0B00F84489 /* Assets.xcassets */; };
 		3FF269EE2AACEC0B00F84489 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF269ED2AACEC0B00F84489 /* Preview Assets.xcassets */; };
@@ -60,6 +64,9 @@
 		3FA9E3582AD34A150011B401 /* VideoUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoUploader.swift; sourceTree = "<group>"; };
 		3FA9E35A2AD34FD80011B401 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		3FC6076E2AB7C9F400228A1C /* ForgetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordView.swift; sourceTree = "<group>"; };
+		3FCDC2772AEB2BF900C713B8 /* Noticia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Noticia.swift; sourceTree = "<group>"; };
+		3FCDC2792AEB2F5400C713B8 /* NoticiasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiasViewModel.swift; sourceTree = "<group>"; };
+		3FCDC27B2AEB3B2C00C713B8 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		3FF269E32AACEC0800F84489 /* MedConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF269E62AACEC0800F84489 /* MedConnectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedConnectApp.swift; sourceTree = "<group>"; };
 		3FF269EA2AACEC0B00F84489 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,6 +85,7 @@
 				3F0E8C7B2AAD538A00D14BCD /* FirebaseStorage in Frameworks */,
 				3F0E8C772AAD538A00D14BCD /* FirebaseFirestore in Frameworks */,
 				3F0E8C792AAD538A00D14BCD /* FirebaseFirestoreSwift in Frameworks */,
+				3FE041632AEC215D00EFE4BA /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +95,9 @@
 		3FA9E3552AD342450011B401 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3F0E8C7C2AAD540100D14BCD /* AuthViewModel.swift */,
 				3FA9E3562AD3425A0011B401 /* ConteudosViewModel.swift */,
+				3FCDC2792AEB2F5400C713B8 /* NoticiasViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -167,8 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				3F0E8C6F2AAD1EB000D14BCD /* User.swift */,
-				3F0E8C7C2AAD540100D14BCD /* AuthViewModel.swift */,
 				3FA9E35A2AD34FD80011B401 /* Video.swift */,
+				3FCDC2772AEB2BF900C713B8 /* Noticia.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				3FA9E3582AD34A150011B401 /* VideoUploader.swift */,
+				3FCDC27B2AEB3B2C00C713B8 /* ImageUploader.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -202,6 +213,7 @@
 				3F0E8C762AAD538A00D14BCD /* FirebaseFirestore */,
 				3F0E8C782AAD538A00D14BCD /* FirebaseFirestoreSwift */,
 				3F0E8C7A2AAD538A00D14BCD /* FirebaseStorage */,
+				3FE041622AEC215D00EFE4BA /* Kingfisher */,
 			);
 			productName = MedConnect;
 			productReference = 3FF269E32AACEC0800F84489 /* MedConnect.app */;
@@ -233,6 +245,7 @@
 			mainGroup = 3FF269DA2AACEC0800F84489;
 			packageReferences = (
 				3F0E8C732AAD538A00D14BCD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				3FE041612AEC215D00EFE4BA /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 3FF269E42AACEC0800F84489 /* Products */;
 			projectDirPath = "";
@@ -266,8 +279,10 @@
 				3FF269FF2AACEF4300F84489 /* LoginView.swift in Sources */,
 				3F05F8032AE88DB6003FD441 /* AddConteudoView.swift in Sources */,
 				3FF26A022AACF26B00F84489 /* InputView.swift in Sources */,
+				3FCDC27C2AEB3B2C00C713B8 /* ImageUploader.swift in Sources */,
 				3F6F731F2AE026DB0045538A /* NoticiasView.swift in Sources */,
 				3FF269FA2AACEEA300F84489 /* ContentView.swift in Sources */,
+				3FCDC2782AEB2BF900C713B8 /* Noticia.swift in Sources */,
 				3FF269E72AACEC0800F84489 /* MedConnectApp.swift in Sources */,
 				3F6F73232AE02C730045538A /* DetalheItemView.swift in Sources */,
 				3F6F73272AE09F8E0045538A /* AddNoticiaView.swift in Sources */,
@@ -277,6 +292,7 @@
 				3F6F73252AE031380045538A /* HeadingView.swift in Sources */,
 				3FA9E3592AD34A150011B401 /* VideoUploader.swift in Sources */,
 				3F6F732D2AE1ED8B0045538A /* EditProfileView.swift in Sources */,
+				3FCDC27A2AEB2F5400C713B8 /* NoticiasViewModel.swift in Sources */,
 				3F4D7F762ABB33D5000BA289 /* MainView.swift in Sources */,
 				3F0E8C6A2AACFA6B00D14BCD /* RegistrationView.swift in Sources */,
 				3F0E8C6E2AAD004300D14BCD /* SettingsRowView.swift in Sources */,
@@ -492,6 +508,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		3FE041612AEC215D00EFE4BA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -514,6 +538,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3F0E8C732AAD538A00D14BCD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		3FE041622AEC215D00EFE4BA /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3FE041612AEC215D00EFE4BA /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

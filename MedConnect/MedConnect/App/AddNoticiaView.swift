@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct AddNoticiaView: View {
     
@@ -16,7 +17,9 @@ struct AddNoticiaView: View {
     @State private var hasPhotoGallery = false
     @State private var selectedPhotos: [Image?] = [nil, nil, nil, nil, nil]
     @Binding var isModalViewPresented: Bool
-
+    @StateObject var viewModel = NoticiasViewModel()
+    @State private var imagePickerPresented = false
+    
     var body: some View {
         NavigationView {
                     Form {
@@ -33,15 +36,15 @@ struct AddNoticiaView: View {
                             
                             if hasImage {
                                 Button(action: {
-                                    selectedImage = Image("img")
+                                    imagePickerPresented.toggle()
                                 }) {
                                     Text("Selecionar Imagem")
                                 }
-
+                                .photosPicker(isPresented: $imagePickerPresented, selection: $viewModel.selectedImage)
                             }
                             
-                            if selectedImage != nil && hasImage == true {
-                                selectedImage?
+                            if viewModel.postImage != nil && hasImage == true {
+                                viewModel.postImage?
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: 200)
@@ -49,39 +52,42 @@ struct AddNoticiaView: View {
                             }
                         }
                         
-                        Section(header: Text("Galeria de Fotos")) {
-                            Toggle("Adicionar galeria de fotos", isOn: $hasPhotoGallery)
-                            
-                            if hasPhotoGallery {
-                                ForEach(0..<selectedPhotos.count, id: \.self) { index in
-                                    if let photo = selectedPhotos[index] {
-                                        photo
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(height: 200)
-                                            .cornerRadius(12)
-                                    } else {
-                                        Button(action: {
-                                            selectedPhotos[index] = Image("img")
-                                        }) {
-                                            Text("Selecionar Foto \(index + 1)")
-                                        }
-                                    }
-                                }
-                                
-                                if selectedPhotos.count < 5 {
-                                    Button(action: {
-                                        selectedPhotos.append(nil)
-                                    }) {
-                                        Text("Adicionar Foto")
-                                    }
-                                }
-                            }
-                        }
+//                        Section(header: Text("Galeria de Fotos")) {
+//                            Toggle("Adicionar galeria de fotos", isOn: $hasPhotoGallery)
+//
+//                            if hasPhotoGallery {
+//                                ForEach(0..<selectedPhotos.count, id: \.self) { index in
+//                                    if let photo = selectedPhotos[index] {
+//                                        photo
+//                                            .resizable()
+//                                            .scaledToFit()
+//                                            .frame(height: 200)
+//                                            .cornerRadius(12)
+//                                    } else {
+//                                        Button(action: {
+//                                            selectedPhotos[index] = Image("img")
+//                                        }) {
+//                                            Text("Selecionar Foto \(index + 1)")
+//                                        }
+//                                    }
+//                                }
+//
+//                                if selectedPhotos.count < 5 {
+//                                    Button(action: {
+//                                        selectedPhotos.append(nil)
+//                                    }) {
+//                                        Text("Adicionar Foto")
+//                                    }
+//                                }
+//                            }
+//                        }
 
                         Section {
                             Button("Salvar Notícia") {
-                                isModalViewPresented = false
+                                Task {
+                                    try await viewModel.uploadNews(newsTitle: newsTitle, newsText: newsText)
+                                    isModalViewPresented = false
+                                }
                             }
                         }
                     }//: FORM

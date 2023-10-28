@@ -10,13 +10,14 @@ import SwiftUI
 struct NoticiasView: View {
     
     @Binding var isShowingElements: Bool
+    @StateObject var viewModel = NoticiasViewModel()
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(0..<5, id: \.self) { _ in
-                    NavigationLink(destination: DetalheItemView(isShowingElements: $isShowingElements)) {
-                        ListaItensView()
+                ForEach(viewModel.news) { news in
+                    NavigationLink(destination: DetalheItemView(isShowingElements: $isShowingElements, news: news)) {
+                        ListaItensView(news: news)
                     }
                 }
             }//: LIST

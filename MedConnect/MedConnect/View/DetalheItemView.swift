@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct DetalheItemView: View {
     
     @Binding var isShowingElements : Bool
+    let news: Noticia
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -17,7 +19,7 @@ struct DetalheItemView: View {
                 
                 // TITULO
                 
-                Text("Título".uppercased())
+                Text(news.newsTitle.uppercased())
                     .font(.largeTitle)
                     .fontWeight(.heavy)
                     .multilineTextAlignment(.center)
@@ -39,7 +41,7 @@ struct DetalheItemView: View {
                 
                 // IMAGEM PRINCIPAL
                 
-                Image("img")
+                KFImage(URL(string: news.selectedImage))
                     .resizable()
                     .scaledToFit()
                     .frame(height: 225)
@@ -53,7 +55,7 @@ struct DetalheItemView: View {
                 
                 Group {
                     HeadingView(headingImage: "text.viewfinder", headingText: "Texto")
-                    Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi luctus maximus rhoncus. Praesent porttitor, purus ac congue convallis, lorem ante interdum lorem, at egestas elit augue ut risus. Sed sed odio sed risus rhoncus hendrerit. Curabitur sit amet accumsan mauris, eget tincidunt purus. Mauris venenatis massa nisi, imperdiet egestas mauris venenatis a. Sed lobortis tincidunt augue ut consectetur. Praesent est leo, laoreet ac urna eu, sodales hendrerit nisl. Maecenas quis dictum libero. Cras at urna felis. Vivamus urna odio, laoreet at ultricies ornare, interdum ut neque. Cras in urna quis libero auctor vehicula et eu felis. Etiam malesuada mauris rhoncus feugiat facilisis. \n\nAliquam erat volutpat. Nulla risus ante, placerat sed massa sit amet, luctus tincidunt diam. Maecenas in tincidunt ipsum. Cras ullamcorper tempus imperdiet.")
+                    Text(news.newsText)
                         .layoutPriority(1)
                         .multilineTextAlignment(.leading)
                         .font(.body)
@@ -123,8 +125,9 @@ struct DetalheItemView: View {
 struct DetalheItemView_Previews: PreviewProvider {
     
     @State static var isShowingElements = true
+    @State static var news = Noticia(id: "1", newsTitle: "Titulo", newsText: "Texto", selectedImage: "img")
     
     static var previews: some View {
-        DetalheItemView(isShowingElements: $isShowingElements)
+        DetalheItemView(isShowingElements: $isShowingElements, news: news)
     }
 }

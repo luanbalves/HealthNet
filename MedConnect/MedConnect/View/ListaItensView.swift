@@ -6,18 +6,21 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ListaItensView: View {
+    let news: Noticia
+    
     var body: some View {
         HStack(alignment: .center, spacing: 16) {
-            Image("img")
+            KFImage(URL(string: news.selectedImage))
                 .resizable()
                 .scaledToFill()
                 .frame(width: 90, height: 90)
                 .clipShape(RoundedRectangle(cornerRadius: 12))
             
             VStack {
-                Text("Título")
+                Text(news.newsTitle)
                     .font(.title2)
                     .fontWeight(.heavy)
                     .foregroundColor(.accentColor)
@@ -34,8 +37,11 @@ struct ListaItensView: View {
 }
 
 struct ListaItensView_Previews: PreviewProvider {
+    
+    @State static var news = Noticia(id: "1", newsTitle: "Titulo", newsText: "Texto", selectedImage: "img")
+    
     static var previews: some View {
-        ListaItensView()
+        ListaItensView(news: news)
             .previewLayout(.sizeThatFits)
             .padding()
     }
