@@ -22,6 +22,9 @@ struct NoticiasView: View {
                 }
             }//: LIST
             .navigationTitle("Notícias")
+            .refreshable {
+                Task { try await viewModel.fetchNews() }
+            }
         }//: NAVVIEW
     }
 }

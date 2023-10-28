@@ -12,13 +12,14 @@ struct AddNoticiaView: View {
     
     @State private var newsTitle = ""
     @State private var newsText = ""
-    @State private var hasImage = false
-    @State private var selectedImage: Image?
-    @State private var hasPhotoGallery = false
-    @State private var selectedPhotos: [Image?] = [nil, nil, nil, nil, nil]
+//    @State private var hasPhotoGallery = false
+//    @State private var selectedPhotos: [Image?] = [nil, nil, nil, nil, nil]
     @Binding var isModalViewPresented: Bool
     @StateObject var viewModel = NoticiasViewModel()
     @State private var imagePickerPresented = false
+    @State private var imageSubtitle = ""
+    @State private var subtitle = ""
+    @State private var isUploading = false
     
     var body: some View {
         NavigationView {
@@ -27,29 +28,37 @@ struct AddNoticiaView: View {
                             TextField("Digite o título da notícia", text: $newsTitle)
                         }
 
+                        Section(header: Text("Subtítulo")) {
+                            TextField("Digite o subtítulo da notícia", text: $subtitle)
+                        }
+                        
                         Section(header: Text("Texto")) {
                             TextEditor(text: $newsText)
                         }
-
+                        
                         Section(header: Text("Imagem")) {
-                            Toggle("Adicionar imagem", isOn: $hasImage)
                             
-                            if hasImage {
                                 Button(action: {
                                     imagePickerPresented.toggle()
                                 }) {
-                                    Text("Selecionar Imagem")
+                                    HStack {
+                                        Image(systemName: "photo.on.rectangle")
+                                        Text("Selecionar Imagem")
+                                    }
                                 }
                                 .photosPicker(isPresented: $imagePickerPresented, selection: $viewModel.selectedImage)
-                            }
-                            
-                            if viewModel.postImage != nil && hasImage == true {
+
+                            if viewModel.postImage != nil {
                                 viewModel.postImage?
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: 200)
                                     .cornerRadius(12)
                             }
+                        }
+                        
+                        Section(header: Text("Legenda da imagem")) {
+                            TextField("Digite a legenda da imagem", text: $imageSubtitle)
                         }
                         
 //                        Section(header: Text("Galeria de Fotos")) {
@@ -84,11 +93,16 @@ struct AddNoticiaView: View {
 
                         Section {
                             Button("Salvar Notícia") {
+                                isUploading = true
+                                
                                 Task {
-                                    try await viewModel.uploadNews(newsTitle: newsTitle, newsText: newsText)
+                                    try await viewModel.uploadNews(newsTitle: newsTitle, newsText: newsText, subtitle: subtitle, imageSubtitle: imageSubtitle)
                                     isModalViewPresented = false
+                                    isUploading = false
                                 }
                             }
+                            .fontWeight(.bold)
+                            .disabled(newsTitle.isEmpty || viewModel.selectedImage == nil || isUploading || newsText.isEmpty || subtitle.isEmpty || imageSubtitle.isEmpty)
                         }
                     }//: FORM
                     .navigationTitle("Adicionar Notícia")

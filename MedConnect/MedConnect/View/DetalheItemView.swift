@@ -33,7 +33,7 @@ struct DetalheItemView: View {
                 
                 // SUBTEXTO
                 
-                Text("Subtexto contendo um breve resumo do que está sendo tratado.")
+                Text(news.subtitle)
                     .font(.headline)
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.accentColor)
@@ -47,7 +47,7 @@ struct DetalheItemView: View {
                     .frame(height: 225)
                     .cornerRadius(12)
                 
-                Text("Legenda da foto")
+                Text(news.imageSubtitle)
                     .font(.caption)
                     .foregroundColor(.secondary)
                 
@@ -107,7 +107,7 @@ struct DetalheItemView: View {
                 .padding(.horizontal)
                 
             }//: VSTACK
-            .navigationBarTitle("Aprenda sobre Titulo", displayMode: .inline)
+            .navigationBarTitle("Aprenda sobre \(news.newsTitle)", displayMode: .inline)
             .onAppear {
                 isShowingElements = false
             }
@@ -125,7 +125,7 @@ struct DetalheItemView: View {
 struct DetalheItemView_Previews: PreviewProvider {
     
     @State static var isShowingElements = true
-    @State static var news = Noticia(id: "1", newsTitle: "Titulo", newsText: "Texto", selectedImage: "img")
+    @State static var news = Noticia(id: "1", newsTitle: "Titulo", newsText: "Texto", selectedImage: "img", subtitle: "Subtitulo", imageSubtitle: "Subtitulo da imagem")
     
     static var previews: some View {
         DetalheItemView(isShowingElements: $isShowingElements, news: news)

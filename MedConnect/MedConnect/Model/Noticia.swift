@@ -12,5 +12,7 @@ struct Noticia: Identifiable, Codable {
     var newsTitle: String
     var newsText: String
     var selectedImage: String
+    var subtitle: String
+    var imageSubtitle: String
 //    var selectedPhotos: [String?] 
 }

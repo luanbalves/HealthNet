@@ -33,12 +33,12 @@ class NoticiasViewModel: ObservableObject {
         self.postImage = Image(uiImage: uiImage)
     }
     
-    func uploadNews(newsTitle: String, newsText: String) async throws {
+    func uploadNews(newsTitle: String, newsText: String, subtitle: String, imageSubtitle: String) async throws {
         guard let uiImage = uiImage else { return }
         
         let newsRef = Firestore.firestore().collection("news").document()
         guard let imageUrl = try await ImageUploader.uploadImage(image: uiImage) else { return }
-        let news = Noticia(id: newsRef.documentID, newsTitle: newsTitle, newsText: newsText, selectedImage: imageUrl)
+        let news = Noticia(id: newsRef.documentID, newsTitle: newsTitle, newsText: newsText, selectedImage: imageUrl, subtitle: subtitle, imageSubtitle: imageSubtitle)
         guard let encodedNews = try? Firestore.Encoder().encode(news) else { return }
         try await newsRef.setData(encodedNews)
     }

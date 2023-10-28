@@ -54,9 +54,7 @@ struct ConteudosView: View {
                     }
                     
                 }//: SCROLLVIEW
-                .refreshable {
-                    Task { try await viewModel.fetchVideos() }
-                }
+                
                 .navigationTitle("Conteudos")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
@@ -73,6 +71,9 @@ struct ConteudosView: View {
                 }
                 
             }//: SCROLLVIEW
+            .refreshable {
+                Task { try await viewModel.fetchVideos() }
+            }
         }//: NAVSTACK
     }
 }

@@ -25,7 +25,7 @@ struct ListaItensView: View {
                     .fontWeight(.heavy)
                     .foregroundColor(.accentColor)
                 
-                Text("Subtexto contendo um breve resumo do que está sendo tratado.")
+                Text(news.subtitle)
                     .font(.footnote)
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
@@ -38,7 +38,7 @@ struct ListaItensView: View {
 
 struct ListaItensView_Previews: PreviewProvider {
     
-    @State static var news = Noticia(id: "1", newsTitle: "Titulo", newsText: "Texto", selectedImage: "img")
+    @State static var news = Noticia(id: "1", newsTitle: "Titulo", newsText: "Texto", selectedImage: "img", subtitle: "Subtitulo", imageSubtitle: "Subtitulo da imagem")
     
     static var previews: some View {
         ListaItensView(news: news)
