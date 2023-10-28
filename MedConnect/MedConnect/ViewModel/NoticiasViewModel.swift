@@ -21,6 +21,16 @@ class NoticiasViewModel: ObservableObject {
     
     @Published var news = [Noticia]()
     
+    @Published var searchText = ""
+    
+    var filteredNews: [Noticia] {
+        if searchText.isEmpty {
+            return news
+        } else {
+            return news.filter{ $0.newsTitle.localizedCaseInsensitiveContains(searchText) }
+        }
+    }
+    
     init() {
         Task { try await fetchNews() }
     }

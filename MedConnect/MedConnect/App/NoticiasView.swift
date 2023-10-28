@@ -11,19 +11,59 @@ struct NoticiasView: View {
     
     @Binding var isShowingElements: Bool
     @StateObject var viewModel = NoticiasViewModel()
+    @State private var isSearching = false
+    @State private var isModalViewPresented = false
     
     var body: some View {
         NavigationView {
+            
             List {
-                ForEach(viewModel.news) { news in
+                HStack {
+                    Button(action: {
+                        withAnimation {
+                            isSearching.toggle()
+                            if !isSearching {
+                                viewModel.searchText = ""
+                            }
+                        }
+                    }, label: {
+                        Image(systemName: isSearching ? "xmark.circle.fill" : "magnifyingglass")
+                    })
+                    .foregroundColor(.accentColor)
+                    .buttonStyle(PlainButtonStyle())
+                    
+                    if isSearching {
+                        TextField("Pesquisar", text: $viewModel.searchText)
+                            .frame(maxWidth: .infinity)
+                    }
+                    
+                    
+                    Spacer()
+                    
+                    Button {
+                        isModalViewPresented.toggle()
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    .foregroundColor(.accentColor)
+                    .buttonStyle(PlainButtonStyle())
+
+                }//: HSTACK
+                
+                ForEach(viewModel.filteredNews) { news in
                     NavigationLink(destination: DetalheItemView(isShowingElements: $isShowingElements, news: news)) {
                         ListaItensView(news: news)
                     }
                 }
+                
+                
             }//: LIST
             .navigationTitle("Notícias")
             .refreshable {
                 Task { try await viewModel.fetchNews() }
+            }
+            .sheet(isPresented: $isModalViewPresented) {
+                AddNoticiaView(isModalViewPresented: $isModalViewPresented)
             }
         }//: NAVVIEW
     }

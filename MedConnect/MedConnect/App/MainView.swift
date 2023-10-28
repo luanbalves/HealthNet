@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var searchText: String = ""
-    @State private var isSearching: Bool = false
-    @State private var isModalViewPresented = false
+//    @State private var isSearching: Bool = false
+//    @State private var isModalViewPresented = false
     @State private var selectedSegment = 0
     @State private var isShowingElements = true
     let segments = ["Notícias", "Resumos", "Dicas"]
+    @StateObject var viewModel = NoticiasViewModel()
     
     var body: some View {
         NavigationView {
@@ -38,42 +38,42 @@ struct MainView: View {
                 
                 Spacer()
             }//: VSTACK
-            .navigationBarItems(leading:
-                                    
-                                    HStack {
-                if isShowingElements {
-                    Button(action: {
-                        withAnimation {
-                            isSearching.toggle()
-                            if !isSearching {
-                                searchText = ""
-                            }
-                        }
-                    }, label: {
-                        Image(systemName: isSearching ? "xmark.circle.fill" : "magnifyingglass")
-                    })
-                }
-                
-                if isSearching {
-                    TextField("Pesquisar", text: $searchText)
-                }
-                
-            }//: HSTACK
-            )
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    if isShowingElements {
-                        Button {
-                            isModalViewPresented.toggle()
-                        } label: {
-                            Image(systemName: "plus")
-                        }
-                    }
-                }
-            }
-            .sheet(isPresented: $isModalViewPresented) {
-                AddNoticiaView(isModalViewPresented: $isModalViewPresented)
-            }
+//            .navigationBarItems(leading:
+//
+//                                    HStack {
+//                if isShowingElements {
+//                    Button(action: {
+//                        withAnimation {
+//                            isSearching.toggle()
+//                            if !isSearching {
+//                                viewModel.searchText = ""
+//                            }
+//                        }
+//                    }, label: {
+//                        Image(systemName: isSearching ? "xmark.circle.fill" : "magnifyingglass")
+//                    })
+//                }
+//
+//                if isSearching {
+//                    TextField("Pesquisar", text: $viewModel.searchText)
+//                }
+//
+//            }//: HSTACK
+//            )
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    if isShowingElements {
+//                        Button {
+//                            isModalViewPresented.toggle()
+//                        } label: {
+//                            Image(systemName: "plus")
+//                        }
+//                    }
+//                }
+//            }
+//            .sheet(isPresented: $isModalViewPresented) {
+//                AddNoticiaView(isModalViewPresented: $isModalViewPresented)
+//            }
         }//: NAVVIEW
     }
 }
