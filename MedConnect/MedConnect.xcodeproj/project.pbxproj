@@ -35,6 +35,7 @@
 		3FCDC27A2AEB2F5400C713B8 /* NoticiasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC2792AEB2F5400C713B8 /* NoticiasViewModel.swift */; };
 		3FCDC27C2AEB3B2C00C713B8 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC27B2AEB3B2C00C713B8 /* ImageUploader.swift */; };
 		3FE041632AEC215D00EFE4BA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3FE041622AEC215D00EFE4BA /* Kingfisher */; };
+		3FE8F2432AF43E520048B188 /* ContentProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8F2422AF43E520048B188 /* ContentProfileView.swift */; };
 		3FF269E72AACEC0800F84489 /* MedConnectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF269E62AACEC0800F84489 /* MedConnectApp.swift */; };
 		3FF269EB2AACEC0B00F84489 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF269EA2AACEC0B00F84489 /* Assets.xcassets */; };
 		3FF269EE2AACEC0B00F84489 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF269ED2AACEC0B00F84489 /* Preview Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		3FCDC2772AEB2BF900C713B8 /* Noticia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Noticia.swift; sourceTree = "<group>"; };
 		3FCDC2792AEB2F5400C713B8 /* NoticiasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiasViewModel.swift; sourceTree = "<group>"; };
 		3FCDC27B2AEB3B2C00C713B8 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
+		3FE8F2422AF43E520048B188 /* ContentProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentProfileView.swift; sourceTree = "<group>"; };
 		3FF269E32AACEC0800F84489 /* MedConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF269E62AACEC0800F84489 /* MedConnectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedConnectApp.swift; sourceTree = "<group>"; };
 		3FF269EA2AACEC0B00F84489 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				3F6F73202AE02AA50045538A /* ListaItensView.swift */,
 				3F6F73222AE02C730045538A /* DetalheItemView.swift */,
 				3F6F73242AE031380045538A /* HeadingView.swift */,
+				3FE8F2422AF43E520048B188 /* ContentProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				3F6F73232AE02C730045538A /* DetalheItemView.swift in Sources */,
 				3F6F73272AE09F8E0045538A /* AddNoticiaView.swift in Sources */,
 				3FA9E3512ABB3BB10011B401 /* ConteudosView.swift in Sources */,
+				3FE8F2432AF43E520048B188 /* ContentProfileView.swift in Sources */,
 				3F0E8C702AAD1EB000D14BCD /* User.swift in Sources */,
 				3F0E8C6C2AACFDC200D14BCD /* ProfileView.swift in Sources */,
 				3F6F73252AE031380045538A /* HeadingView.swift in Sources */,

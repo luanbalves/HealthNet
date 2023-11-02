@@ -98,14 +98,15 @@ struct VideoThumbnailView: View {
             
             VideoPlayer(player: AVPlayer(url: URL(string: video.videoUrl)!))
                 .frame(height: 200)
+                
             
             HStack {
                 Text(video.title)
                     .font(.title2)
                     .background(
                         Color.accentColor
-                            .frame(height: 6)
-                            .offset(y: 24)
+                            .frame(height: 4)
+                            .offset(y: 15)
                     )
 
                 Spacer()
