@@ -10,7 +10,6 @@
 		3F05F8032AE88DB6003FD441 /* AddConteudoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F05F8022AE88DB6003FD441 /* AddConteudoView.swift */; };
 		3F0E8C6A2AACFA6B00D14BCD /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E8C692AACFA6B00D14BCD /* RegistrationView.swift */; };
 		3F0E8C6C2AACFDC200D14BCD /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E8C6B2AACFDC200D14BCD /* ProfileView.swift */; };
-		3F0E8C6E2AAD004300D14BCD /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E8C6D2AAD004300D14BCD /* SettingsRowView.swift */; };
 		3F0E8C702AAD1EB000D14BCD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0E8C6F2AAD1EB000D14BCD /* User.swift */; };
 		3F0E8C722AAD265C00D14BCD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F0E8C712AAD265C00D14BCD /* GoogleService-Info.plist */; };
 		3F0E8C752AAD538A00D14BCD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3F0E8C742AAD538A00D14BCD /* FirebaseAuth */; };
@@ -36,6 +35,7 @@
 		3FCDC27C2AEB3B2C00C713B8 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC27B2AEB3B2C00C713B8 /* ImageUploader.swift */; };
 		3FE041632AEC215D00EFE4BA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3FE041622AEC215D00EFE4BA /* Kingfisher */; };
 		3FE8F2432AF43E520048B188 /* ContentProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE8F2422AF43E520048B188 /* ContentProfileView.swift */; };
+		3FEFE0522AF546B300E81C8F /* SelectedContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEFE0512AF546B300E81C8F /* SelectedContentView.swift */; };
 		3FF269E72AACEC0800F84489 /* MedConnectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF269E62AACEC0800F84489 /* MedConnectApp.swift */; };
 		3FF269EB2AACEC0B00F84489 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF269EA2AACEC0B00F84489 /* Assets.xcassets */; };
 		3FF269EE2AACEC0B00F84489 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF269ED2AACEC0B00F84489 /* Preview Assets.xcassets */; };
@@ -48,7 +48,6 @@
 		3F05F8022AE88DB6003FD441 /* AddConteudoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddConteudoView.swift; sourceTree = "<group>"; };
 		3F0E8C692AACFA6B00D14BCD /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		3F0E8C6B2AACFDC200D14BCD /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		3F0E8C6D2AAD004300D14BCD /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		3F0E8C6F2AAD1EB000D14BCD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3F0E8C712AAD265C00D14BCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "MedConnect/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		3F0E8C7C2AAD540100D14BCD /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -69,6 +68,7 @@
 		3FCDC2792AEB2F5400C713B8 /* NoticiasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiasViewModel.swift; sourceTree = "<group>"; };
 		3FCDC27B2AEB3B2C00C713B8 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		3FE8F2422AF43E520048B188 /* ContentProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentProfileView.swift; sourceTree = "<group>"; };
+		3FEFE0512AF546B300E81C8F /* SelectedContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedContentView.swift; sourceTree = "<group>"; };
 		3FF269E32AACEC0800F84489 /* MedConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF269E62AACEC0800F84489 /* MedConnectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedConnectApp.swift; sourceTree = "<group>"; };
 		3FF269EA2AACEC0B00F84489 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -156,9 +156,6 @@
 				3FA9E34E2ABB361C0011B401 /* MainTabView.swift */,
 				3FA9E3502ABB3BB10011B401 /* ConteudosView.swift */,
 				3F6F731E2AE026DB0045538A /* NoticiasView.swift */,
-				3F6F73262AE09F8E0045538A /* AddNoticiaView.swift */,
-				3F6F732C2AE1ED8B0045538A /* EditProfileView.swift */,
-				3F05F8022AE88DB6003FD441 /* AddConteudoView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -166,12 +163,15 @@
 		3FF269F52AACED2D00F84489 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3F05F8022AE88DB6003FD441 /* AddConteudoView.swift */,
+				3F6F732C2AE1ED8B0045538A /* EditProfileView.swift */,
+				3F6F73262AE09F8E0045538A /* AddNoticiaView.swift */,
 				3FF26A002AACF04B00F84489 /* InputView.swift */,
-				3F0E8C6D2AAD004300D14BCD /* SettingsRowView.swift */,
 				3F6F73202AE02AA50045538A /* ListaItensView.swift */,
 				3F6F73222AE02C730045538A /* DetalheItemView.swift */,
 				3F6F73242AE031380045538A /* HeadingView.swift */,
 				3FE8F2422AF43E520048B188 /* ContentProfileView.swift */,
+				3FEFE0512AF546B300E81C8F /* SelectedContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -293,13 +293,13 @@
 				3FE8F2432AF43E520048B188 /* ContentProfileView.swift in Sources */,
 				3F0E8C702AAD1EB000D14BCD /* User.swift in Sources */,
 				3F0E8C6C2AACFDC200D14BCD /* ProfileView.swift in Sources */,
+				3FEFE0522AF546B300E81C8F /* SelectedContentView.swift in Sources */,
 				3F6F73252AE031380045538A /* HeadingView.swift in Sources */,
 				3FA9E3592AD34A150011B401 /* VideoUploader.swift in Sources */,
 				3F6F732D2AE1ED8B0045538A /* EditProfileView.swift in Sources */,
 				3FCDC27A2AEB2F5400C713B8 /* NoticiasViewModel.swift in Sources */,
 				3F4D7F762ABB33D5000BA289 /* MainView.swift in Sources */,
 				3F0E8C6A2AACFA6B00D14BCD /* RegistrationView.swift in Sources */,
-				3F0E8C6E2AAD004300D14BCD /* SettingsRowView.swift in Sources */,
 				3FA9E35B2AD34FD80011B401 /* Video.swift in Sources */,
 				3F0E8C7D2AAD540100D14BCD /* AuthViewModel.swift in Sources */,
 				3F6F73212AE02AA50045538A /* ListaItensView.swift in Sources */,

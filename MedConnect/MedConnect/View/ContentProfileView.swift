@@ -17,8 +17,8 @@ struct ContentProfileView: View {
             HStack {
                 HeadingView(headingImage: headingImage, headingText: headingText)
                
-                Button {
-                    print("")
+                NavigationLink {
+                    SelectedContentView()
                 } label: {
                     Image(systemName: "arrow.forward")
                 }
